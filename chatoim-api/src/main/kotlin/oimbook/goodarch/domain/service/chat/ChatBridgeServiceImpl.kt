@@ -26,7 +26,7 @@ class ChatBridgeServiceImpl : ChatBridgeService {
     private val httpClient = HttpClient.create()
         .responseTimeout(Duration.ofMinutes(10))
         .doOnConnected { conn ->
-            conn.addHandlerLast(ReadTimeoutHandler(60, TimeUnit.SECONDS)) // 데이터 패킷 간 최대 간격
+            conn.addHandlerLast(ReadTimeoutHandler(60, TimeUnit.SECONDS))
             conn.addHandlerLast(WriteTimeoutHandler(60, TimeUnit.SECONDS))
         }
     private val webClient: WebClient = WebClient.builder()

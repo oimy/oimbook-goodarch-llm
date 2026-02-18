@@ -29,6 +29,7 @@ export default function ChatInput({
             });
             if (!response.ok) {
                 console.error("Streaming error:", response.statusText);
+                onReceiveAnswer("죄송합니다. 답변에 실패했으니 다시 시도해주세요.", true);
                 return;
             }
 

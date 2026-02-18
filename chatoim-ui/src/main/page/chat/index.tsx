@@ -56,6 +56,7 @@ export default function Chat() {
             content,
             createdAt: new Date(),
         }]);
+        setAnswerStream("생각하는 중...");
         setIsAnswering(true);
         return newContextId || chatContextId || -1;
     };
@@ -69,7 +70,7 @@ export default function Chat() {
                 content,
                 createdAt: new Date(),
             }]);
-            setAnswerStream("");
+            setAnswerStream(content);
             setIsAnswering(false);
         }
     };

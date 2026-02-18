@@ -1,3 +1,4 @@
+import asyncio
 from typing import List
 
 from fastapi import APIRouter
@@ -10,14 +11,19 @@ router = APIRouter(prefix="/inference/midm")
 
 inference_service = midm_inference_service
 
+inference_lock = asyncio.Lock()
+
 
 @router.post("")
-def infer_midm_stream(chats: List[Chat]):
-    generator = inference_service.infer(chats)
-
-    def generate_infer():
-        for text in generator:
-            yield text
+async def infer_midm_stream(chats: List[Chat]):
+    async def generate_infer():
+        await inference_lock.acquire()
+        generator = inference_service.infer(chats)
+        try:
+            for text in generator:
+                yield text
+        finally:
+            inference_lock.release()
 
     return StreamingResponse(
         generate_infer(),
