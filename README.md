@@ -3,8 +3,7 @@
 
 related post : [oimbook - 오래가는 코드가 강한 것이다]()
 
-![demo gif]("https://github.com/oimy/oimbook-goodarch-llm/blob/main/demo/demo_1.gif?raw=true")
-
+![demo gif](https://github.com/user-attachments/assets/eadbfdc0-953f-455a-b0e8-a1d5e883c96a)
 
 # Getting Start
 ### LLM
