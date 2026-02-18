@@ -1,0 +1,8 @@
+### chat "안녕하세요. 당신은 누구신가요?"
+POST http://localhost:8080/chat/talk
+Content-Type: application/json
+
+{
+  "contextId": null,
+  "content": "사과는 얼마나 크고 또 얼마나 맛있을까요?"
+}

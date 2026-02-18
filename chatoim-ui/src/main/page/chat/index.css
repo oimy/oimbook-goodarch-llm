@@ -1,0 +1,9 @@
+#chat-message-container {
+    -webkit-mask-image: linear-gradient(
+            to bottom,
+            black 0%,      /* 검은색은 보이는 부분 */
+            black 90%,     /* 90%까지는 선명하게 */
+            transparent 100% /* 마지막 10%는 투명하게 깎임 */
+    );
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}

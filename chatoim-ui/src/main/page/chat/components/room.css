@@ -1,0 +1,62 @@
+.message {
+    max-width: 600px;
+    padding: 15px 25px;
+    background-color: #fff9f2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.message-user {
+    align-self: end;
+    background-color: #feffed;
+    border-radius: 15px 15px 2px 15px;
+}
+
+.message-assistant {
+    align-self: start;
+    background-color: #ffffff;
+    border-radius: 15px 15px 15px 2px;
+}
+
+.message-loading {
+    display: inline-block;
+    position: relative;
+    border-radius: 15px;
+}
+
+.message-loading-border {
+    content: "";
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    position: absolute;
+    left: -6px;
+    top: -6px;
+    border-radius: 20px;
+    background: conic-gradient(
+            from 0deg,
+            #ff8a8a 0%,    /* 진한 로즈 핑크 */
+            #ffb347 25%,   /* 선명한 살구/오렌지 */
+            #66d982 50%,   /* 생기 있는 에메랄드 그린 */
+            #74b9ff 75%,   /* 맑은 스카이 블루 */
+            #ff8a8a 100%   /* 다시 로즈 핑크 */
+    );
+    animation: border-flow 2s linear infinite;
+    z-index: -1;
+}
+
+@keyframes border-flow {
+    0% {
+        filter: hue-rotate(0deg) drop-shadow(4px 4px 5px rgba(255, 138, 138, 0.5));
+    }
+    25% {
+        filter: hue-rotate(90deg) drop-shadow(-4px 4px 5px rgba(255, 179, 71, 0.5));
+    }
+    50% {
+        filter: hue-rotate(180deg) drop-shadow(-4px -4px 5px rgba(102, 217, 130, 0.5));
+    }
+    75% {
+        filter: hue-rotate(270deg) drop-shadow(4px -4px 5px rgba(116, 185, 255, 0.5));
+    }
+    100% {
+        filter: hue-rotate(360deg) drop-shadow(4px 4px 5px rgba(255, 138, 138, 0.5));
+    }
+}
